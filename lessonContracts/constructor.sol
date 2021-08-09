@@ -2,7 +2,7 @@
 
 pragma solidity 0.6.12;
 
-contract TheC {
+contract constructors {
     
     uint private simpleInt;
     
@@ -20,14 +20,10 @@ contract TheC {
         simpleInt = _value;
     }
     
-    // this example also demonstrates getter and setter. It is a good habit to keep our variable private,
-    // meaning that no other contract has access to it. Right? If this variable is the balance of your
-    // money you don't want other contracts to modify this variable easily. So we make it private but also provide
-    // 2 function for us to change this variable, that is the setter function and getter function which we also call 
-    // then the getter and setter method. Method is just another name for functions so the two sentence I just said really
-    // means the same thing. But one of you might ask, your functions are public, that also means any contract can access
-    // this function therefore anyone can still change this variable. Well, we can just add a modifier to our function
-    // that would only allow the owner of this contract, which is me. Only allow me to change the private variable.
+    // this example also demonstrates getter and setter functions. It is a good habit to keep our variable private,
+    // meaning that no other contract has access to it, to prevent sensitive data like account balance being accessed by outside contracts
+    // So we make it private but we must use a setter and getter function/method to access this data
+    // However since we the functions are public, we must use modifiers to set privleged access to the function which will be discussed later.
     
     }
     
