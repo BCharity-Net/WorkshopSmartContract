@@ -4,6 +4,6 @@ pragma solidity 0.6.12;
 
 contract variable {
     
-    string public cat_and_dog = "cat and dog";
+    string public aCatDog = "cat and dog";
 }
    
