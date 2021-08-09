@@ -23,7 +23,7 @@ contract HelloWorld is abstractHelloWorld {
         simpleInteger = _value;
     }
     
-    function AddaNumber(uint _value) public returns(uint) {
+    function addNumber(uint _value) public returns(uint) {
         return simpleInteger + _value;
     }
 } 
