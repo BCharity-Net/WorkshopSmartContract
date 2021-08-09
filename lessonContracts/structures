@@ -7,47 +7,41 @@ contract Stru {
     struct myStruct {
         string name;
         uint myAge;
-        bool isMarried;
-        uint backAccountsNumber;
+        bool isAlive;
+        uint bankAccountNumber;
     }
     
-    // The blueprint of the struct is created, now we need to
-    // create an instace of the struct
+    // The blueprint of the struct is created, now we need can
+    // create an instance of the structure
     myStruct human = myStruct("Josh", 20, true, 432432);
     
     ///////////////////////////////////////////////////////
+    // A different example demonstrating an array of structures
     
-    // now I'm gonna do something interesting, this is not related to the human instance
-    // this is a brand new example
+    myStruct[] public UniStudentData;
+    // similar to uint[] accountNumber, but this is an array of structs
     
-    myStruct[] public UnistudentData;
-    // similar to uint[] accountnumber, but this is an array of structs
+    // We will assume that all uni students are alive and have a bank account number in this case, so we only have 2 inputs instead of 4.
     
-    // I'm just gonna assume that all the students in all have a bank accountnumber
-    // and are all married, but that is obviously not true, This assumption only 
-    // allows me to have two inputs instead of 4.
     function create(string memory name, uint age) public {
-        UnistudentData.push(myStruct(name ,age ,true, 333));
+        UnistudentData.push(myStruct(name ,age ,true, 789789));
         
-        // the very inner bracket, this is how we initialize structs, you can see 
-        // it is very similar to line 16 where we first initizlie a struct but then 
-        // assign it to a place holder which is an array called human, in other languages 
-        // this is also called a pointer, the human is a pointer pointing to the my struct 
-        // instance. Now we look back to line 30, this time we created a my struct 
-        // instance but didn't assign to any place holder, instead we just pushed the strict
-        // to the array.
+        // The innermost brackets is how we initialize structures
+        // it is very similar to line 16 where we first initialize a struct but then assign it to a placeholder
+        // which is an array called human, also called a pointer that points to myStruct
+        // On line 27, this time when we create a myStruct instance we don't assign a placeholder
+        // instead we push the struct to the array.
     }
     
     function get(uint _index) public view returns (string memory, uint , bool , uint) {
         myStruct storage student = UnistudentData[_index];
-        return (student.name, student.myAge, student.isMarried, student.backAccountsNumber);
+        return (student.name, student.myAge, student.isAlive, student.bankAccountNumber);
     }
     
     function update(uint _index, string memory _name) public {
         myStruct storage student = UnistudentData[_index];
         student.name = _name;
-    }
-    
-    }
+    }   
+ }
     
  
